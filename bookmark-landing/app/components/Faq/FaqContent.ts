@@ -1,10 +1,10 @@
-type faqContentType = {
+export interface faqContentType {
   id: number;
   question: string;
   answer: string;
-};
+}
 
-const faqContent: faqContentType[] = [
+export const faqContent: faqContentType[] = [
   {
     id: 0,
     question: "What is Bookmark?",
@@ -30,5 +30,3 @@ const faqContent: faqContentType[] = [
       "Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam vitae neque eget nisl gravida pellentesque non ut velit.",
   },
 ];
-
-export default faqContent;

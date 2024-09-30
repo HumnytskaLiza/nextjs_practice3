@@ -1,12 +1,8 @@
-"use client";
-
-import { useState } from "react";
-import arrowBtnIcon from "../../../public/icon-arrow.svg";
-import faqContent from "./FaqContent";
-import Image from "next/image";
+import { faqContent, faqContentType } from "./FaqContent";
 import styles from "./Faq.module.css";
+import FaqQuestion from "./FaqQuestion/FaqQuestion";
 
-function Faq() {
+export default function Faq() {
   return (
     <section id={styles.faq}>
       <div className="section-header">
@@ -18,34 +14,12 @@ function Faq() {
       </div>
 
       <ul id={styles.questions}>
-        {faqContent.map((question) => {
-          const [open, setOpen] = useState(false);
-
-          return (
-            <li
-              className={styles.question}
-              key={question["id"]}
-              onClick={() => setOpen(!open)}
-            >
-              <div>
-                <h4>{question["question"]}</h4>
-                <Image
-                  className={open ? `${styles.active}` : ""}
-                  src={arrowBtnIcon}
-                  alt="Arrow button to show/hide the answer"
-                />
-              </div>
-              <p className={open ? `${styles.active}` : ""}>
-                {question["answer"]}
-              </p>
-            </li>
-          );
-        })}
+        {faqContent.map((question: faqContentType) => (
+          <FaqQuestion key={question.id} params={question} />
+        ))}
       </ul>
 
       <button className="primary-btn">More info</button>
     </section>
   );
 }
-
-export default Faq;

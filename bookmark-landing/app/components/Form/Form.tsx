@@ -6,7 +6,7 @@ export default function Form() {
       <div id={styles["purple-bg"]}></div>
       <div>
         <p>35,000+ already joined</p>
-        <h2>Stay up-to-date with what we're doing</h2>
+        <h2>Stay up-to-date with what we&apos;re doing</h2>
       </div>
       <form>
         <input
