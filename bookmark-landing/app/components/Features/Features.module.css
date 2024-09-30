@@ -1,0 +1,142 @@
+#features {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.list-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-tabs div {
+  width: 100%;
+  text-align: center;
+  padding: 16px 0;
+  border-top: 1px solid hsl(229, 23%, 86%);
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.list-tabs div:nth-child(3) {
+  border-bottom: 1px solid hsl(229, 23%, 86%);
+}
+
+.list-tabs div.active {
+  border-bottom: 4px solid var(--red-clr);
+}
+
+.list-tabs div:hover {
+  color: var(--red-clr);
+}
+
+.features-content {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+
+.features-description {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  align-items: center;
+}
+
+.features-description p {
+  color: var(--grey-clr);
+  text-align: center;
+}
+
+.features-description button {
+  width: fit-content;
+}
+
+.features-content img {
+  width: 100%;
+  height: auto;
+}
+
+.features-content > div {
+  position: relative;
+}
+
+#feature-section-purple-blob {
+  width: 80%;
+  height: 45vw;
+  background-color: var(--purple-clr);
+  position: absolute;
+  left: calc(var(--padding-phone) * -1);
+  top: 30%;
+  z-index: -10;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+/* TABLET */
+
+@media screen and (min-width: 768px) {
+  .list-tabs {
+    flex-direction: row;
+  }
+
+  .list-tabs div {
+    border: none;
+    border-bottom: 1px solid hsl(229, 23%, 86%);
+  }
+
+  .features-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .features-description {
+    width: 55%;
+    align-items: start;
+  }
+
+  .features-description p,
+  .features-description h3 {
+    text-align: left;
+  }
+
+  #feature-section-purple-blob {
+    left: calc(var(--padding-tablet) * -1);
+    top: 30%;
+    height: 25vw;
+  }
+}
+
+/* LAPTOP */
+
+@media screen and (min-width: 1024px) {
+  #feature-section-purple-blob {
+    left: calc(var(--padding-laptop) * -1);
+    top: 30%;
+    height: 25vw;
+  }
+}
+
+/* PC */
+
+@media screen and (min-width: 1440px) {
+  .features-description {
+    align-items: start;
+  }
+
+  #feature-section-purple-blob {
+    left: calc(var(--padding-pc) * -1);
+    top: 20%;
+    height: 20vw;
+  }
+
+  .features-content {
+    gap: 150px;
+  }
+
+  .features-description {
+    width: 45%;
+  }
+}

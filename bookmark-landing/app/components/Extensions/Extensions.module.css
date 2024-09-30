@@ -1,0 +1,61 @@
+#download-extension {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.browser-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 40px;
+  width: 100%;
+}
+
+.browser-cards > li {
+  box-shadow: 0 5px 12px hsla(231, 69%, 60%, 0.2);
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px 20px 20px;
+}
+
+.browser-cards > li > div {
+  flex-direction: column;
+}
+
+.browser-cards > li > div img {
+  margin-bottom: 40px;
+  height: 150px;
+  width: auto;
+}
+
+.dots-img {
+  width: 100%;
+  height: auto;
+}
+
+.browser-cards > li > div h3 {
+  margin-bottom: 6px;
+}
+
+.browser-cards > li > div p {
+  text-align: center;
+  color: var(--grey-clr);
+  margin-bottom: 20px;
+}
+
+.browser-cards > li button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* TABLET */
+
+@media screen and (min-width: 768px) {
+  .browser-cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    column-gap: 20px;
+  }
+}
