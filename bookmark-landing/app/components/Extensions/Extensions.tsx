@@ -1,7 +1,6 @@
-import dots from "../../../public/bg-dots.svg";
-import extensionsContent from "./ExtensionsContent";
-import Image from "next/image";
+import { extensionsContent, extensionsContentProps } from "./ExtensionsContent";
 import styles from "./Extensions.module.css";
+import Extension from "./Extension/Extension";
 
 export default function Extensions() {
   return (
@@ -14,27 +13,9 @@ export default function Extensions() {
         </p>
       </div>
       <ul className={styles["browser-cards"]}>
-        {extensionsContent.map((extension) => {
+        {extensionsContent.map((extension: extensionsContentProps) => {
           return (
-            <li
-              className="justify-content-center"
-              key={extension["extension-id"]}
-            >
-              <div className="justify-content-center">
-                <Image
-                  src={extension["extension-img"]}
-                  alt={`${extension["extension-id"]} logo`}
-                />
-                <h3>{extension["extension-header"]}</h3>
-                <p>{extension["extension-version"]}</p>
-              </div>
-              <Image
-                src={dots}
-                className={styles["dots-img"]}
-                alt="Card decor"
-              />
-              <button className="primary-btn">Add & Install Extension</button>
-            </li>
+            <Extension key={extension["extension-id"]} params={extension}/>
           );
         })}
       </ul>

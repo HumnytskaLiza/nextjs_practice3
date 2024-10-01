@@ -2,25 +2,19 @@ import featuresIllustrationTab1 from "../../../public/illustration-features-tab-
 import featuresIllustrationTab2 from "../../../public/illustration-features-tab-2.svg";
 import featuresIllustrationTab3 from "../../../public/illustration-features-tab-3.svg";
 
-type featuresContentType = {
-  simpleBookmarking: {
-    "feature-header": string;
-    "feature-desc": string;
-    "feature-img": HTMLImageElement;
-  };
-  speedySearching: {
-    "feature-header": string;
-    "feature-desc": string;
-    "feature-img": HTMLImageElement;
-  };
-  easySharing: {
-    "feature-header": string;
-    "feature-desc": string;
-    "feature-img": HTMLImageElement;
-  };
+interface FeatureContent {
+  "feature-header": string;
+  "feature-desc": string;
+  "feature-img": HTMLImageElement;
+}
+
+export interface FeaturesContentProps {
+  simpleBookmarking: FeatureContent;
+  speedySearching: FeatureContent;
+  easySharing: FeatureContent;
 };
 
-const featuresContent: featuresContentType = {
+export const featuresContent: FeaturesContentProps = {
   simpleBookmarking: {
     "feature-header": "Bookmark in one click",
     "feature-desc":
@@ -40,5 +34,3 @@ const featuresContent: featuresContentType = {
     "feature-img": featuresIllustrationTab3,
   },
 };
-
-export default featuresContent;

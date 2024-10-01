@@ -1,10 +1,10 @@
-export interface faqContentType {
+export interface faqContentProps {
   id: number;
   question: string;
   answer: string;
 }
 
-export const faqContent: faqContentType[] = [
+export const faqContent: faqContentProps[] = [
   {
     id: 0,
     question: "What is Bookmark?",

@@ -2,14 +2,14 @@ import logoChrome from "../../../public/logo-chrome.svg";
 import logoFirefox from "../../../public/logo-firefox.svg";
 import logoOpera from "../../../public/logo-opera.svg";
 
-type extensionsContentType = {
+export interface extensionsContentProps {
   "extension-id": string;
   "extension-header": string;
   "extension-version": string;
   "extension-img": HTMLImageElement;
 };
 
-const extensionsContent: extensionsContentType[] = [
+export const extensionsContent: extensionsContentProps[] = [
   {
     "extension-id": "Chrome",
     "extension-header": "Add to Chrome",
@@ -29,5 +29,3 @@ const extensionsContent: extensionsContentType[] = [
     "extension-img": logoOpera,
   },
 ];
-
-export default extensionsContent;

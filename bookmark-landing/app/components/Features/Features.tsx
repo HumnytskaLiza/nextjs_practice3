@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import featuresContent from "./FeaturesContent";
-import Image from "next/image";
+import { featuresContent } from "./FeaturesContent";
 import styles from "./Features.module.css";
+import Feature from "./Feature/Feature";
 
 type FeatureKeys = keyof typeof featuresContent;
 
@@ -46,20 +46,8 @@ export default function Features() {
         </div>
       </div>
 
-      <div className={styles["features-content"]}>
-        <div className={styles["features-photo"]}>
-          <Image
-            src={featuresContent[openedTab]["feature-img"]}
-            alt="Feature illustration"
-          />
-          <div id={styles["feature-section-purple-blob"]}></div>
-        </div>
-        <div className={styles["features-description"]}>
-          <h3>{featuresContent[openedTab]["feature-header"]}</h3>
-          <p>{featuresContent[openedTab]["feature-desc"]}</p>
-          <button className="primary-btn">More info</button>
-        </div>
-      </div>
+      <Feature params={featuresContent} openedTab={openedTab}/>
+
     </section>
   );
 }
