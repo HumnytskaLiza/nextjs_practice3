@@ -1,4 +1,4 @@
-import { faqContent, faqContentProps } from "./FaqContent";
+import { faqContent, FaqContentProps } from "./FaqContent";
 import styles from "./Faq.module.css";
 import FaqQuestion from "./FaqQuestion/FaqQuestion";
 
@@ -14,11 +14,9 @@ export default function Faq() {
       </div>
 
       <ul id={styles.questions}>
-        {faqContent.map((question: faqContentProps) => {
-          return (
-            <FaqQuestion key={question.id} params={question} />
-          );
-  })}
+        {faqContent.map((question: FaqContentProps) => {
+          return <FaqQuestion key={question.id} params={question} />;
+        })}
       </ul>
 
       <button className="primary-btn">More info</button>

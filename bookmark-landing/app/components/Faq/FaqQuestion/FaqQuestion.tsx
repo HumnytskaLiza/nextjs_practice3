@@ -4,13 +4,10 @@ import { useState } from "react";
 import styles from "../Faq.module.css";
 import arrowBtnIcon from "../../../../public/icon-arrow.svg";
 import Image from "next/image";
+import { FaqContentProps } from "../FaqContent";
 
 interface FaqQuestionProps {
-  params: {
-    id: number;
-    question: string;
-    answer: string;
-  };
+  params: FaqContentProps;
 }
 
 export default function FaqQuestion({ params }: FaqQuestionProps) {

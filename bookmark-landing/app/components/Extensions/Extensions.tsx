@@ -1,4 +1,4 @@
-import { extensionsContent, extensionsContentProps } from "./ExtensionsContent";
+import { extensionsContent, ExtensionsContentProps } from "./ExtensionsContent";
 import styles from "./Extensions.module.css";
 import Extension from "./Extension/Extension";
 
@@ -13,9 +13,9 @@ export default function Extensions() {
         </p>
       </div>
       <ul className={styles["browser-cards"]}>
-        {extensionsContent.map((extension: extensionsContentProps) => {
+        {extensionsContent.map((extension: ExtensionsContentProps) => {
           return (
-            <Extension key={extension["extension-id"]} params={extension}/>
+            <Extension key={extension["extension-id"]} params={extension} />
           );
         })}
       </ul>

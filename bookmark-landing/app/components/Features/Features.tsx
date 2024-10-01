@@ -46,8 +46,7 @@ export default function Features() {
         </div>
       </div>
 
-      <Feature params={featuresContent} openedTab={openedTab}/>
-
+      <Feature params={featuresContent} openedTab={openedTab} />
     </section>
   );
 }
